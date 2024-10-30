@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://byf546h2pqr5a"]
+
+[ext_resource type="Script" path="res://scripts/TreeNode.cs" id="1_1amvq"]
+[ext_resource type="Texture2D" uid="uid://d0o7y4yu2kpl2" path="res://textures/circle.png" id="1_4183y"]
+[ext_resource type="Texture2D" uid="uid://rskhrokuqfaa" path="res://textures/add.png" id="2_53iwt"]
+[ext_resource type="Theme" uid="uid://cp5rl7lni62tq" path="res://AddButtonTheme.tres" id="4_lb3o0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_44cp3"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lk1lt"]
+font_size = 64
+font_color = Color(0.0110876, 0.0110876, 0.0110876, 1)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("_valueLabel", "_leftHeightLabel", "_rightHeigtLabel", "_addLeftChildButton", "_addRightChildButton")]
+script = ExtResource("1_1amvq")
+_valueLabel = NodePath("Sprite2D/Value")
+_leftHeightLabel = NodePath("Sprite2D/LeftHeight")
+_rightHeigtLabel = NodePath("Sprite2D/RightHeight")
+_addLeftChildButton = NodePath("Sprite2D/LeftAddButton")
+_addRightChildButton = NodePath("Sprite2D/RightAddButton")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4183y")
+
+[node name="LineEdit" type="LineEdit" parent="Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -276.0
+offset_right = -206.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.5
+offset_top = -343.5
+offset_right = -219.5
+offset_bottom = -168.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_44cp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftHeight" type="Label" parent="Sprite2D"]
+offset_left = -256.0
+offset_top = -256.0
+offset_right = -219.0
+offset_bottom = -168.0
+label_settings = SubResource("LabelSettings_lk1lt")
+
+[node name="RightHeight" type="Label" parent="Sprite2D"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -329.0
+offset_top = -256.0
+offset_right = -256.0
+offset_bottom = -168.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_lk1lt")
+horizontal_alignment = 2
+
+[node name="LeftAdd" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-256, 256)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_53iwt")
+
+[node name="RightAdd" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(256, 256)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_53iwt")
+
+[node name="LeftAddButton" type="Button" parent="Sprite2D"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 232.0
+offset_bottom = 232.0
+grow_vertical = 0
+scale = Vector2(0.125, 0.125)
+theme = ExtResource("4_lb3o0")
+icon = ExtResource("2_53iwt")
+icon_alignment = 1
+
+[node name="RightAddButton" type="Button" parent="Sprite2D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 232.0
+offset_bottom = 232.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.125, 0.125)
+theme = ExtResource("4_lb3o0")
+icon = ExtResource("2_53iwt")
+icon_alignment = 1

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://duuqxd57dygx4"]
+
+[ext_resource type="PackedScene" uid="uid://46t8lhdo16kn" path="res://scenes/ui.tscn" id="1_aq6l4"]
+[ext_resource type="Script" path="res://scripts/CameraControl.cs" id="2_f7mlw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_f7mlw")
+
+[node name="Control" parent="." instance=ExtResource("1_aq6l4")]
